@@ -119,11 +119,10 @@ class FurutaEnv(gym.Env):
 
         # Reward — agent gets +1 for every step pendulum stays upright
         # penalise large pendulum angle and large control effort
-        reward = (
-            1.0
-            - 5.0 * theta2**2          # penalise pendulum deviation
-            - 0.1 * V**2               # penalise large voltage
-            - 0.5 * theta1_dot**2      # penalise arm spinning fast
+        reward = float(1.0
+            - 5.0 * float(theta2)**2
+            - 0.1 * float(V)**2
+            - 0.5 * float(theta1_dot)**2
         )
 
         # Episode ends if pendulum falls too far (>30 degrees)

@@ -125,8 +125,8 @@ class FurutaEnv(gym.Env):
             - 0.5 * float(theta1_dot)**2
         )
 
-        # Episode ends if pendulum falls too far (>30 degrees)
-        terminated = bool(abs(theta2) > np.deg2rad(30))
+        # Episode ends if pendulum falls too far (>150 degrees)
+        terminated = bool(abs(theta2) > np.deg2rad(150))
         truncated  = False
         self.state = np.clip(self.state, self.observation_space.low, self.observation_space.high)
 
